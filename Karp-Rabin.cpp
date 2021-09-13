@@ -80,25 +80,25 @@ int HashUpdate (long long h, string& text,int index,int l){
 int main(){
 
     string p = "Aditya";
-    string GS = "AmoghSagarAdityaRajRohit";
+    string q = "AmoghSagarAdityaRajRohit";
 
     int hashP = Hash(p);
 
-    string k = GS.substr(0,p.size());
+    string k = q.substr(0,p.size());
     int hash = Hash(k);
 
-    for(int i=p.size();i<GS.size();i++){
+    for(int i=p.size();i<q.size();i++){
 
         if(hash==hashP){
 
-            if(GS.substr(i-p.size(),p.size()) == p){
-                cout<<"Yay!"<<"\n";
+            if(q.substr(i-p.size(),p.size()) == p){
+                cout<<"Yes!"<<"\n";
                 return 0;
             }
             
         }
         
-        hash = HashUpdate(hash,GS,i,p.size());
+        hash = HashUpdate(hash,q,i,p.size());
 
     }
 
